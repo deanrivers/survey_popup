@@ -1,0 +1,159 @@
+body,html{
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    background-color: azure;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+#main-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    color: #ccc;
+    font-size: 2em;
+}
+
+/* survey modal css */
+#survey-modal-main-container{
+    background-color: aquamarine;
+    width: 300px;
+    height: 400px;
+    position: fixed;
+    left: 5%;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px 1px #a2d4c3;
+    padding: 3%;
+
+
+}
+
+.survey-in-animation{
+    bottom: 5%;
+    animation-name: survey-in;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+}
+
+.survey-out-animation{
+    bottom: -100%;
+    animation-name: survey-out;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+}
+
+#survey-modal-main-container h1{
+    padding-left: 5%;
+}
+
+#survey-x-button{
+    position: absolute;
+    right: 4%;
+    top: 2%;
+    border-radius: 100px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    font-size: 1.5em;
+    transition: 0.2s;
+}
+
+#survey-x-button:hover{
+    cursor: pointer;
+    background-color: rgb(0, 255, 170);
+}
+
+#choice-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.choice-container{
+    height: 100%;
+    /* margin: 5%; */
+    margin-left: 0;
+    /* text-align: center; */
+    align-items: center;
+    transition: 0.2s;
+}
+
+
+#main-form label{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 5%;
+    transition: 0.2s;
+    height: 50px;
+}
+
+#main-form label:hover{
+    cursor: pointer;
+    background-color: rgb(0, 255, 170);
+}
+
+input[type='radio']{
+    display: none;
+}
+
+input[type="radio"]:checked+label{
+    background-color: rgb(0, 193, 129);
+    font-weight: bold;
+} 
+
+#next-button{
+    border: 1px solid rgb(0, 193, 129);
+    background-color: aquamarine;
+    width: 100%;
+    height: 50px;
+    
+    outline: none;
+    transition: 0.2s;
+}
+
+#next-button:hover{
+    background-color: rgb(0, 193, 129);
+    cursor: pointer;
+}
+
+
+
+/* ************************************************** */
+/* ************************************************** */
+/* ************************************************** */
+/* ************************************************** */
+/* Animations */
+
+/* Survey Container */
+@keyframes survey-in{
+    0%{
+        bottom: -100%;
+    }
+
+    90%{
+        bottom: 10%;
+    }
+
+    100%{
+        bottom:5%
+    }
+}
+
+@keyframes survey-out{
+    0%{
+        bottom: 5%;
+    }
+
+    10%{
+        bottom: 10%;
+    }
+
+    100%{
+        bottom:-100%
+    }
+}
