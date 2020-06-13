@@ -2,7 +2,6 @@
 
 
 
-
 var questionDict = [
     {
         question: 'What is your gender?',
